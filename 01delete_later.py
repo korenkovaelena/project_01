@@ -72,6 +72,109 @@
 #         print('Найдена минимальная цена')
 
 
-rainbow = ['red', 'green', 'blue', 'violet']
-for i in enumerate(rainbow):
-    print(i)
+# rainbow = ['red', 'green', 'blue', 'violet']
+# for i in enumerate(rainbow):
+#     print(i)
+
+
+# list = []
+# list.append(1)
+# print('djgk',list)
+
+# population = [
+#     ['Санкт-Петербург', 7e+6], 
+#     ['Красноярск', 1.2e+6],
+#     ['Киров', 0.5e+6]
+#     ]
+# print(f"Население города {population[1][0]} - {population[1][1]} человек")
+
+# total_sum = population[0][1] + population[1][1] + population[2][1]
+# print(total_sum)
+# population = [
+#     ['Санкт-Петербург', 7e+6], 
+#     ['Красноярск', 1.2e+6], 
+#     ['Киров', 0.5e+6]
+#     ]
+
+
+# total_sum = 0
+# for i in population:
+#     total_sum += i[1]
+# print(total_sum)
+
+
+# population = {
+#     'Санкт-Петербург': 7e+6, 
+#     'Красноярск': 1.2e+6, 
+#     'Киров': 0.5e+6,
+#     }
+
+# print(population['Красноярск'])
+
+# from pprint import pprint
+# pprint(dir(population))
+
+
+# for i in population.values():
+#     print(i)
+
+# employees = {'Alice' : 100000,
+#     'Bob' : 99817,
+#     'Carol' : 122908,
+#     'Frank' : 88123,
+#     'Eve' : 93121}
+# top_managers = sum([employees[n] for n in employees if employees[n]>=100000])
+# print(top_managers)
+# # total_sum = sum([s for s in employees.values() if s>=100000])
+# # print(total_sum)
+
+my_favorite_songs = [
+    ['Waste a Moment', 3.03],
+    ['New Salvation', 4.02],
+    ['Staying\' Alive', 3.40],
+    ['Out of Touch', 3.03],
+    ['A Sorta Fairytale', 5.28],
+    ['Easy', 4.15],
+    ['Beautiful Day', 4.04],
+    ['Nowhere to Run', 2.58],
+    ['In This World', 4.02],
+]
+
+# import random
+# import datetime
+# time = 0
+# i = 0
+# while i < 3:
+#     x = random.choice(my_favorite_songs)
+#     i += 1
+#     print(x)
+#     time += x[1]*60
+# time = int(time//60)
+
+# print(f'Три песни звучат {time} минут')
+
+import random
+import datetime
+from datetime import timedelta
+# from datetime import datetime
+time = 0
+i = 0
+# h = timedelta(hours=0)
+h = []
+while i < 3:
+    x = random.choice(my_favorite_songs)
+    i += 1
+    print(x)
+    # time += x[1]*60
+    date_string = str(x[1])
+    print(date_string)
+    date_obj = datetime.datetime.strptime(date_string, '%M.%S')
+    print(date_obj)
+    # d = datetime.time.strftime(20:00:00 '%M.%S')
+    # print(d)
+    # h.append(date_obj ) 
+    # s = timedelta(date_obj)
+    # print(s)
+    # print(h)
+    from datetime import timedelta
+from datetime import datetime

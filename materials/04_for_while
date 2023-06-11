@@ -80,6 +80,6 @@ for ind in range(len(rainbow)): # range(len(rainbow)) - диапазон от 0 
 
 # for i in enumerate(rainbow):
 #     print(i)                 # кортеж (0, 'red'), (1, 'green'), (2, 'blue'), (3, 'violet')
-print('helo')
+
 for ind, elem in enumerate(rainbow):
     print(f'Элемент {elem} - индекс {ind}') # Элемент red - индекс 0, Элемент green - индекс 1? итд
