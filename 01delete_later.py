@@ -128,17 +128,17 @@
 # # total_sum = sum([s for s in employees.values() if s>=100000])
 # # print(total_sum)
 
-my_favorite_songs = [
-    ['Waste a Moment', 3.03],
-    ['New Salvation', 4.02],
-    ['Staying\' Alive', 3.40],
-    ['Out of Touch', 3.03],
-    ['A Sorta Fairytale', 5.28],
-    ['Easy', 4.15],
-    ['Beautiful Day', 4.04],
-    ['Nowhere to Run', 2.58],
-    ['In This World', 4.02],
-]
+# my_favorite_songs = [
+#     ['Waste a Moment', 3.03],
+#     ['New Salvation', 4.02],
+#     ['Staying\' Alive', 3.40],
+#     ['Out of Touch', 3.03],
+#     ['A Sorta Fairytale', 5.28],
+#     ['Easy', 4.15],
+#     ['Beautiful Day', 4.04],
+#     ['Nowhere to Run', 2.58],
+#     ['In This World', 4.02],
+# ]
 
 # import random
 # import datetime
@@ -153,28 +153,33 @@ my_favorite_songs = [
 
 # print(f'Три песни звучат {time} минут')
 
-import random
-import datetime
-from datetime import timedelta
+# import random
+# import datetime
+# from datetime import timedelta
+# # from datetime import datetime
+# time = 0
+# i = 0
+# # h = timedelta(hours=0)
+# h = []
+# while i < 3:
+#     x = random.choice(my_favorite_songs)
+#     i += 1
+#     print(x)
+#     # time += x[1]*60
+#     date_string = str(x[1])
+#     print(date_string)
+#     date_obj = datetime.datetime.strptime(date_string, '%M.%S')
+#     print(date_obj)
+#     # d = datetime.time.strftime(20:00:00 '%M.%S')
+#     # print(d)
+#     # h.append(date_obj ) 
+#     # s = timedelta(date_obj)
+#     # print(s)
+#     # print(h)
+#     from datetime import timedelta
 # from datetime import datetime
-time = 0
-i = 0
-# h = timedelta(hours=0)
-h = []
-while i < 3:
-    x = random.choice(my_favorite_songs)
-    i += 1
-    print(x)
-    # time += x[1]*60
-    date_string = str(x[1])
-    print(date_string)
-    date_obj = datetime.datetime.strptime(date_string, '%M.%S')
-    print(date_obj)
-    # d = datetime.time.strftime(20:00:00 '%M.%S')
-    # print(d)
-    # h.append(date_obj ) 
-    # s = timedelta(date_obj)
-    # print(s)
-    # print(h)
-    from datetime import timedelta
-from datetime import datetime
+
+import random
+data =[]
+data.append(randint(1,99))
+print(data)
