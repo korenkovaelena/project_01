@@ -11,7 +11,35 @@
 # функции sorted, max и min использовать нельзя!
 
 def minimum(arr):
-    pass
+    # for i in range(0, len(list_int) - 1):
+    i = 0
+    j = i + 1
+    while j <= len(list_int) - 1:
+        if list_int[i] <= list_int[j]:
+            j += 1
+        else:
+            i = j
+            j += 1
+    return(list_int[i])
+
 
 def maximum(arr):
-    pass
+    i = 0
+    j = i + 1
+    while j <= len(list_int) - 1:
+        if list_int[i] >= list_int[j]:
+            j += 1
+        else:
+            i = j
+            j += 1
+    return(list_int[i])
+
+import random
+list_int = []
+x = int(input('Введите длину списка: '))
+print('Длина списка: ', x)
+list_int = random.sample(range(0,500), x)
+print('Наш список: ', list_int)
+
+print('Минимальное число в списке = ', minimum(list_int))
+print('Максимальное число в списке = ', maximum(list_int))
