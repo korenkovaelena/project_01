@@ -179,7 +179,24 @@
 #     from datetime import timedelta
 # from datetime import datetime
 
-import random
-data =[]
-data.append(randint(1,99))
-print(data)
+# import random
+# data =[]
+# data.append(randint(1,99))
+# print(data)
+
+def remove_exclamation_marks(s):
+    print(s.find('!'))
+    while s.find('!') != -1:
+        ns = ''
+        for j in range(0, len(s)):
+            # string = ''
+            print(j)
+            if j != s.find('!'):  
+                ns = ns+ s[j]
+                # print(ns)
+        s=ns
+    # print(s)    
+    return s 
+        
+string = 'hhh!!!'
+print('Исправленный текст: ', remove_exclamation_marks(string))

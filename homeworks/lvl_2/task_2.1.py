@@ -11,7 +11,7 @@
 # функции sorted, max и min использовать нельзя!
 
 def minimum(arr):
-    # for i in range(0, len(list_int) - 1):
+    # for i in range(0, len(list_int)):
     i = 0
     j = i + 1
     while j <= len(list_int) - 1:

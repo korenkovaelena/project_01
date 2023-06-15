@@ -24,7 +24,7 @@ def binar(arr, x):
 
 # Экспоненциальный поиск
 
-def exp_serch(arr,x):
+def exp_search(arr,x):
   if arr[0] == x:
     return 0
   index = 1
@@ -35,7 +35,7 @@ def exp_serch(arr,x):
 testarr = [1,2,3,4,5,7,9,10]
 y = int(input("Введи число:"))
 
-if exp_serch(testarr,y) != -1:
-  print ("Элемен найден под индексом: ", exp_serch(testarr,y))
+if exp_search(testarr,y) != -1:
+  print ("Элемен найден под индексом: ", exp_search(testarr,y))
 else:
   print ("Элемент не найден в массиве")
