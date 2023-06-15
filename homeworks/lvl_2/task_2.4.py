@@ -74,14 +74,6 @@ def remove_word_with_one_em(s):
     return ns
 
 
-    #             # string = ''
-    #             if j != i.find('!'):  
-    #                 ns = ns+ i[j]
-    #                 # print(ns)
-    #         s=ns
-    #     # print(s)    
-    # return s 
-
 words = str(input('Введите текст: '))
 # words = ('Hi Hi! Hi! !Hi!')
 print('Исправленный текст: ', remove_word_with_one_em(words))
