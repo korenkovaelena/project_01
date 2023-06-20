@@ -1,0 +1,23 @@
+# Задача 3.Проставить опыт работы всем учителям
+
+import sqlite3
+
+def get_connection():
+  connection = sqlite3.connect('teachers.db')
+  return connection
+
+def close_connection(connection):
+  if connection:
+    connection.close()
+
+def update_exp():
+  try:
+    connection = get_connection()
+    cursor = connection.cursor()
+    cursor.execute("UPDATE Teacher SET Experience = 20 WHERE School_Id = 4")
+    connection.commit()
+    close_connection(connection)
+  except (Exception, sqlite3.Error) as error:
+    print ('Ошибка в получении данных ', error)
+
+update_exp()
