@@ -52,48 +52,55 @@ import sqlite3
 
 # С помощью JOIN
 def get_info(Student_Id):
-    connection = sqlite3.connect('teachers.db') 
-    cursor = connection.cursor()
-    query = """SELECT Student_Id, Student_Name, Students.School_Id, School_Name  FROM School
-JOIN Students on  Students.School_Id = School.School_id
-where Students.student_id = ?;"""
-    cursor.execute(query,(Student_Id,))
-    records = cursor.fetchall()
-    # print (records)
-    for row in records:
-        print ("ID Студента:", row[0])
-        print('Имя студента:', row[1])
-        print("ID школы:", row[2])
-        print('Название школы:', row[3])
+    try:
+        connection = sqlite3.connect('teachers.db') 
+        cursor = connection.cursor()
+        query = """SELECT Student_Id, Student_Name, Students.School_Id, School_Name  FROM School
+    JOIN Students on  Students.School_Id = School.School_id
+    where Students.student_id = ?;"""
+        cursor.execute(query,(Student_Id,))
+        records = cursor.fetchall()
+        # print (records)
+        for row in records:
+            print ("ID Студента:", row[0])
+            print('Имя студента:', row[1])
+            print("ID школы:", row[2])
+            print('Название школы:', row[3])
+    except (Exception, sqlite3.Error) as error:
+        print ('Ошибка в получении данных ', error)
 
 
 
 
 # С помощью функций
 def get_info_functions(Student_Id):
-    connection = sqlite3.connect('teachers.db') 
-    cursor = connection.cursor()
-    query = "SELECT * FROM Students WHERE Student_Id = ?"
-    cursor.execute(query,(Student_Id,))
-    records = cursor.fetchall()
-    for row in records:
-        print ("ID Студента:", row[0])
-        print('Имя студента:', row[1])
-        print("ID школы:", row[2])
-        print('Название школы:', get_school_name(row[2]))
+    try:
+        connection = sqlite3.connect('teachers.db') 
+        cursor = connection.cursor()
+        query = "SELECT * FROM Students WHERE Student_Id = ?"
+        cursor.execute(query,(Student_Id,))
+        records = cursor.fetchall()
+        for row in records:
+            print ("ID Студента:", row[0])
+            print('Имя студента:', row[1])
+            print("ID школы:", row[2])
+            print('Название школы:', get_school_name(row[2]))
+    except (Exception, sqlite3.Error) as error:
+        print ('Ошибка в получении данных ', error)
         
 
 def get_school_name(School_Id):
-    connection = sqlite3.connect('teachers.db') 
-    cursor = connection.cursor()
-    query = "SELECT * FROM School WHERE School_Id = ?"
-    cursor.execute(query,(School_Id,))
-    records = cursor.fetchall()
-    for row in records:
-        return(row[1])
-    
+    try:
+        connection = sqlite3.connect('teachers.db') 
+        cursor = connection.cursor()
+        query = "SELECT * FROM School WHERE School_Id = ?"
+        cursor.execute(query,(School_Id,))
+        records = cursor.fetchone()
+        return records[1]
+    except (Exception, sqlite3.Error) as error:
+        print ('Ошибка в получении данных ', error)
 
 
 x = input('Введите ID Студента: ')
-get_info(x)
-# get_info_functions(x)
+# get_info(x)
+get_info_functions(x)
