@@ -160,43 +160,74 @@
 # time = 0
 # i = 0
 # # h = timedelta(hours=0)
-# h = []
-# while i < 3:
-#     x = random.choice(my_favorite_songs)
-#     i += 1
-#     print(x)
-#     # time += x[1]*60
-#     date_string = str(x[1])
-#     print(date_string)
-#     date_obj = datetime.datetime.strptime(date_string, '%M.%S')
-#     print(date_obj)
-#     # d = datetime.time.strftime(20:00:00 '%M.%S')
-#     # print(d)
-#     # h.append(date_obj ) 
-#     # s = timedelta(date_obj)
-#     # print(s)
-#     # print(h)
-#     from datetime import timedelta
-# from datetime import datetime
+# # h = []
+# # while i < 3:
+# #     x = random.choice(my_favorite_songs)
+# #     i += 1
+# #     print(x)
+# #     # time += x[1]*60
+# #     date_string = str(x[1])
+# #     print(date_string)
+# #     date_obj = datetime.datetime.strptime(date_string, '%M.%S')
+# #     print(date_obj)
+# #     # d = datetime.time.strftime(20:00:00 '%M.%S')
+# #     # print(d)
+# #     # h.append(date_obj ) 
+# #     # s = timedelta(date_obj)
+# #     # print(s)
+# #     # print(h)
+# #     from datetime import timedelta
+# # from datetime import datetime
 
-# import random
-# data =[]
-# data.append(randint(1,99))
-# print(data)
+# # import random
+# # data =[]
+# # data.append(randint(1,99))
+# # print(data)
 
-def remove_exclamation_marks(s):
-    print(s.find('!'))
-    while s.find('!') != -1:
-        ns = ''
-        for j in range(0, len(s)):
-            # string = ''
-            print(j)
-            if j != s.find('!'):  
-                ns = ns+ s[j]
-                # print(ns)
-        s=ns
-    # print(s)    
-    return s 
+# def remove_exclamation_marks(s):
+#     print(s.find('!'))
+#     while s.find('!') != -1:
+#         ns = ''
+#         for j in range(0, len(s)):
+#             # string = ''
+#             print(j)
+#             if j != s.find('!'):  
+#                 ns = ns+ s[j]
+#                 # print(ns)
+#         s=ns
+#     # print(s)    
+#     return s 
         
-string = 'hhh!!!'
-print('Исправленный текст: ', remove_exclamation_marks(string))
+# string = 'hhh!!!'
+# print('Исправленный текст: ', remove_exclamation_marks(string))
+
+class Bucket:
+    """Хранилище объектов для статического сайта."""
+
+    # конструктор __init__ - создает экземпляр класса
+    def __init__(self, tutorial=None):
+        self.content = []
+        if tutorial != None:
+            self.content.append(tutorial)
+
+
+    def __str__(self) -> str:
+        """Возвращает содержимое бакета"""
+        return "Содержимое: " + ", ".join(self.content)
+    
+
+    def __bool__(self) -> bool:
+        return self.content != []
+
+
+    def add(self, obj):
+        """Поместить объект в хранилище"""
+        print('Добавлен,', obj)
+        self.content.append(obj)
+
+    
+# создадим экземпляр - вебсайт
+website = Bucket()
+# website = Bucket('README.md')
+website.add('index.html')
+print(website) 
